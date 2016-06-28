@@ -1,0 +1,10 @@
+  # To use this file, delete the pairs before the "." and place it in the home directory.
+  # After running git init, run this command in the git repo: $ git pair al mkn
+
+pairs:
+  # <initials>: <Firstname> <Lastname>
+  al: Ada Lovelace 
+  mkn: Michael Kaiser-Nyman  
+email_addresses:
+  al: adanator@me.com
+  mkn: michael@gmail.com 
