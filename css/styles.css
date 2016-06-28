@@ -10,3 +10,8 @@
 .contact:hover {
   text-decoration: underline;
 }
+
+#show-contact img {
+  height: auto;
+  max-width: 150px;
+}
