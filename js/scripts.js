@@ -34,5 +34,9 @@ $(document).ready(function() {
       $(".email").html("<a href='mailto:" + newContact.email + "'>" + newContact.email + "</a>");
       $(".picture").html("<img src='" + newContact.picture + "' alt='" + newContact.fullName + "'/>");
     });
+    $("input#new-first-name").val("");
+    $("input#new-last-name").val("");
+    $("input#new-email").val("");
+    $("input#new-picture").val("");
   });
 });
