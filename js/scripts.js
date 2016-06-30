@@ -40,7 +40,20 @@ $(document).ready(function() {
       $(".last-name").text(newContact.lastName);
       $(".email").html("<a href='mailto:" + newContact.email + "'>" + newContact.email + "</a>");
       $(".picture").html("<img src='" + newContact.picture + "' alt='" + newContact.fullName + "'/>");
+      $("ul#addresses").text("");
+      newContact.addresses.forEach(function(address) {
+        $("ul#addresses").append("<li>" + address.street + ", " + address.city + " " + address.state + "</li>");
+      });
     });
+
+    $(".new-address").each(function() {
+      var inputtedStreet = $(this).find("input.new-street").val();
+      var inputtedCity = $(this).find("input.new-city").val();
+      var inputtedState = $(this).find("input.new-state").val();
+      var newAddress = new Address(inputtedStreet, inputtedCity, inputtedState);
+      newContact.addresses.push(newAddress);
+    });
+
     $("input#new-first-name").val("");
     $("input#new-last-name").val("");
     $("input#new-email").val("");
