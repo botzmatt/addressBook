@@ -41,7 +41,7 @@ function removeDiv(forNot) {
 $(document).ready(function() {
 
   $("#add-address").click(function() {
-    $("#new-addresses").append('<div class="new-address forNot">' +
+    $("#new-addresses").append('<div class="new-address forNot" id="forRemove">' +
                                 '<div class="form-group">' +
                                   '<label for="new-street">Street</label>' +
                                   '<input type="text" class="form-control new-street">' +
@@ -55,6 +55,10 @@ $(document).ready(function() {
                                   '<input type="text" class="form-control new-state">' +
                                 '</div>' +
                               '</div>');
+  });
+
+  $("#btnForRemove").click(function () {
+    $("#forRemove").remove();
   });
 
   $("form#new-contact").submit(function(event) {
@@ -88,7 +92,6 @@ $(document).ready(function() {
       newContact.addresses.forEach(function(address) {
         $("ul#addresses").append("<li>" + address.fullAddress() + "</li>");
       });
-
     });
     resetFields();
 
